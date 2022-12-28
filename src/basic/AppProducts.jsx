@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Products from "./components/Products";
+import Products from "./basic/components/Products";
 
 export default function AppProducts() {
 	const [showProducts, setShowProducts] = useState();
@@ -7,7 +7,7 @@ export default function AppProducts() {
 	return (
 		<div>
 			{showProducts && <Products />}
-			<button onClick={() => setShowProducts((show) => !show)}>Toggle</button>
+			<button onClick={() => setShowProducts(!showProducts)}>Toggle</button>
 		</div>
 	);
 }
