@@ -21,7 +21,13 @@
 	border-radius: 5px;
 	position: absolute;
 	display: block;
-	right: 52px;
+	right: -5px;
 	top: 42px;
 	font-weight: bold;
+}
+.avatar {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	margin: auto;
 }
