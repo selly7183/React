@@ -16,7 +16,12 @@ export default function Addtodo({ onAdd }) {
 	};
 	return (
 		<form onSubmit={handleSubmit}>
-			<input type="text" value={text} onChange={handleChange} />
+			<input
+				type="text"
+				value={text}
+				onChange={handleChange}
+				placeholder="Add todo"
+			/>
 			<button>Add</button>
 		</form>
 	);

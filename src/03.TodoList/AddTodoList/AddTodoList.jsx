@@ -11,7 +11,7 @@ export default function AddTodoList({ filter }) {
 	const handleDelete = (deleted) =>
 		setTodos(todos.filter((item) => item.id !== deleted.id));
 
-	const filterd = getFilteredItems(todos, filter);
+	const filtered = getFilteredItems(todos, filter);
 
 	useEffect(() => {
 		localStorage.setItem("todos", JSON.stringify(todos));
@@ -21,7 +21,7 @@ export default function AddTodoList({ filter }) {
 		<section>
 			<h3>TodoList</h3>
 			<ul>
-				{filterd.map((item) => (
+				{filtered.map((item) => (
 					<Todo
 						key={item.id}
 						todo={item}

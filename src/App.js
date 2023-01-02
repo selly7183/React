@@ -1,19 +1,15 @@
-import React, { useState } from "react";
-import AddTodoList from "./AddTodoList/AddTodoList";
-import "./AppTodoList.css";
-import Header from "./components/Header";
+import React from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import MainProducts from "./05.Query/src/components/MainProducts";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
-const filters = ["all", "acitve", "completed"];
+const queryClient = new QueryClient();
+
 export default function App() {
-	const [filter, setFilter] = useState(filters[0]);
 	return (
-		<div>
-			<Header
-				filters={filters}
-				filter={filter}
-				onFilterChange={(filter) => setFilter(filter)}
-			/>
-			<AddTodoList filter={filter} />
-		</div>
+		<QueryClientProvider client={queryClient}>
+			<MainProducts />
+			<ReactQueryDevtools initialIsOpen={true} />
+		</QueryClientProvider>
 	);
 }
